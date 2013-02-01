@@ -1,24 +1,33 @@
 # Rack::OverlayMe
 
-TODO: Write a gem description
+Adds Overlay Me (https://github.com/frontfoot/overlay_me) to your Rack/Rails app.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'rack-overlay_me'
+    gem 'rack-overlay_me', group: 'development'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install rack-overlay_me
 
 ## Usage
 
-TODO: Write usage instructions here
+In a rack app
+
+```ruby
+use Rack::OverlayMe::Middleware
+```
+
+In a rails app
+
+```ruby
+#config/envionments/development.rb
+
+config.middleware.use "Rack::OverlayMe::Middleware"
+```
 
 ## Contributing
 
