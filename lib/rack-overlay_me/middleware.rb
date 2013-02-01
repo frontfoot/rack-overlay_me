@@ -7,7 +7,7 @@ module Rack
 
       def call(env)
         if env['PATH_INFO'] == '/overlay_me.js'
-          [200, {"Content-Type" => 'text/javascript'}, File.read(File.expand_path('../../../javascripts/overlay_me.js',__FILE__))]
+          [200, {"Content-Type" => 'text/javascript'}, ::File.read(::File.expand_path('../../../javascripts/overlay_me.js',__FILE__))]
         else
           status, headers, body = @app.call(env)
           new_body = []
